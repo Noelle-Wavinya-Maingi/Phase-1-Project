@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #d1d1d1;
+}
+
+.main {
+  background-color: #fff;
+  opacity: 0.78;
+  padding: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 70px;
+  border-radius: 10px;
+  margin-bottom: 100px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  color: black;
+  padding: 10px 20px;
+  z-index: 999;
+}
+
+.logo {
+  width: 140px;
+}
+
+.navigation {
+  list-style-type: none;
+  margin-left: 1100px;
+  padding: 0;
+  display: flex;
+}
+
+.navigation li {
+  margin-right: 80px;
+}
+
+.navigation li:last-child {
+  margin-right: 0;
+}
+
+.navigation li a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navigation li a:hover {
+  color: #333;
+}
+
+footer {
+  display: flex;
+  margin-top: 30px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+footer h2 {
+  margin-left: 55px;
+}
+
+.footer {
+  margin-right: 410px;
+}
+
+.footer li {
+  list-style: none;
+  padding: 10px 10px 10px 20px;
+}
+
+.footer li a {
+  color: black;
+  text-decoration: none;
+}
+
+.socials {
+  display: flex;
+}
+
+.socials i {
+  font-size: 25px;
+}
+.copy {
+  margin-top: 100px;
+  margin-left: 100px;
+  font-size: xx-small;
+}
+
+.add-recipe{
+  background: white;
+  border-radius: 5px;
+  width: 50%;
+  margin-left: 450px;
+  padding-top: 40px;
+}
+
+.add-recipe input[type="text"],
+.add-recipe textarea{
+  background: whitesmoke;
+  width: 80%;
+  padding: 15px;
+  margin-left: 80px;
+  margin-bottom: 25px;
+  border: none;
+  border-radius: 3px;
+}
+
+.add-recipe input[type="text"]:focus,
+.add-recipe textarea:focus {
+  border: 2px solid;
+  outline: none;
+}
+
+.add-recipe input[type="text"]::placeholder,
+.add-recipe textarea::placeholder{
+  text-align: center;
+}
+
+.add-recipe input[type="submit"] {
+  background-color: #4caf50; 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 450px;
+  margin-bottom: 30px;
+}
+
+.add-recipe input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.add-recipe input[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.8);
+}
