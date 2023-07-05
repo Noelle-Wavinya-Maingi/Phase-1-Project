@@ -38,79 +38,80 @@
     <div id="menu">
         <div class="container">
             <div class="meal-details">
-                <button type="button"
-                class="btn recipe-close-btn"
-                id="recipe-close-btn"><i class="fas fa-times"></i></button>
                 <div class="meal-details">
-                <form class="add-recipe">
-                    <input type="hidden" id="recipeId"
-                    <input type="text" name="name" id="name" required placeholder="Enter the name">
-                    <textarea name="ingredients" id="ingredients" cols="30" rows="10" required placeholder ="Enter your ingredients"></textarea>
-                    <textarea name="instructions" id="instructions" cols="30" rows="10"required placeholder="Enter your instructions here"></textarea>
-                    <input type="text" name="time-taken" id="time-taken" required placeholder="Enter the time taken">
-                    <input type="submit" value="Add Recipe">
-                </form>
+                    <button class="form-opener">Add Recipe</button>
+                    <form class="add-recipe" style="display: none;">
+                        <input type="hidden" id="recipeId">
+                        <input type="text" name="name" id="name" required placeholder="Enter the name of the meal">
+                        <textarea name="ingredients" id="ingredients" cols="30" rows="10" required
+                            placeholder="Enter your ingredients"></textarea>
+                        <textarea name="instructions" id="instructions" cols="30" rows="10" required
+                            placeholder="Enter your instructions here"></textarea>
+                        <input type="text" name="time_taken" id="time_taken" required
+                            placeholder="Enter the time taken">
+                        <input type="submit" value="Add Recipe">
+                    </form>
                 </div>
             </div>
         </div>
     </div>
     <div id="about">
-    <div id="contact">
-        <footer>
-            <div class="footer">
-                <h2>Quick links</h2>
-                <ul>
-                    <li>
-                        <a href="#">Menu</a>
-                    </li>
-                    <li>
-                        <a href="#about">About us</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer">
-                <h2>Contacts</h2>
-                <ul>
-                    <li>
-                        <a href="tel: 254725531709">(254)-725-531-709</a>
-                    </li>
-                    <li>
-                        <a href="tel: 254722310349">(254)-722-310-349</a>
-                    </li>
+        <div id="contact">
+            <footer>
+                <div class="footer">
+                    <h2>Quick links</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Menu</a>
+                        </li>
+                        <li>
+                            <a href="#about">About us</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <h2>Contacts</h2>
+                    <ul>
+                        <li>
+                            <a href="tel: 254725531709">(254)-725-531-709</a>
+                        </li>
+                        <li>
+                            <a href="tel: 254722310349">(254)-722-310-349</a>
+                        </li>
 
-                    <li>
-                        <a href="mailto: shecooks@gmail.com">shecooks@gmail.com</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="footer">
-                <h2>Socials</h2>
-                <ul class="socials">
-                    <li>
-                        <a href="https://facebook.com"><i class="fab fa-facebook-messenger"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://google.com"><i class="fab fa-google"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
-                    </li>
-                </ul>
-                <h6 class="copy"><i class="fal fa-copyright fa-sm"></i>2023 She Cooks Recipes</h6>
-            </div>
-        </footer>
-    </div>
-    <script src="./index.js"></script>
+                        <li>
+                            <a href="mailto: shecooks@gmail.com">shecooks@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <h2>Socials</h2>
+                    <ul class="socials">
+                        <li>
+                            <a href="https://facebook.com"><i class="fab fa-facebook-messenger"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://google.com"><i class="fab fa-google"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                    <h6 class="copy"><i class="fal fa-copyright fa-sm"></i>2023 She Cooks Recipes</h6>
+                </div>
+            </footer>
+        </div>
+        <script src="./index.js"></script>
 </body>
 
 </html>
