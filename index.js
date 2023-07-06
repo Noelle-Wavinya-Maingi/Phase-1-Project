@@ -58,6 +58,14 @@ document.addEventListener("DOMContentLoaded", () => {
     name.innerHTML = recipe.name;
     card.appendChild(name);
 
+    const image = document.createElement('img');
+    image.className = "image";
+    image.src = recipe.image;
+    image.alt = recipe.name;
+    image.style.width = "150px"; 
+    image.style.height = "150px";
+    card.appendChild(image)
+
     const ViewRecipebtn = document.createElement("button");
     ViewRecipebtn.innerHTML = "View Recipe";
     ViewRecipebtn.addEventListener("click", () => {
@@ -86,7 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
     modalContent.appendChild(closeBtn);
 
     const recipeCard = document.createElement("div");
+    recipeCard.className = "recipe-card";
     recipeCard.innerHTML = `
+    <img src="${recipe.image}" alt="${
+      recipe.name
+    }" class="image-poster" >
         <h2 id="recipe-name">${recipe.name}</h2>
         <h3> Ingredients:</h3>
         <p id="recipe-ingredients">${recipe.ingredients}</p>
