@@ -32,14 +32,14 @@
                     <a href="#contact">Contact Us</a>
                 </li>
 
+                <button class="form-opener">Add Recipe</button>
             </ul>
         </div>
     </div>
     <div id="menu">
         <div class="container">
             <div class="meal-details">
-                <div class="meal-details">
-                    <button class="form-opener">Add Recipe</button>
+                <div class="meal-detail">
                     <form class="add-recipe" style="display: none;">
                         <input type="hidden" id="recipeId">
                         <input type="text" name="name" id="name" required placeholder="Enter the name of the meal">
@@ -49,6 +49,11 @@
                             placeholder="Enter your instructions here"></textarea>
                         <input type="text" name="time_taken" id="time_taken" required
                             placeholder="Enter the time taken">
+                        <input type="url" id="image" name="image" placeholder="Image Url" required><br>
+
+                        <label for="preview">Preview:</label>
+                        <img id="preview" src="" alt="" style="height: 25%;width: 50%;"><br>
+
                         <input type="submit" value="Add Recipe">
                     </form>
                 </div>

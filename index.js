@@ -3,10 +3,28 @@ document.addEventListener("DOMContentLoaded", () => {
     .querySelector(".add-recipe")
     .addEventListener("submit", handleSubmit);
 
-  function initialize() {
-    getRecipes();
+  const imageInput = document.getElementById("image");
+  const previewImage = document.getElementById("preview");
+
+  imageInput.addEventListener("input", () => {
+    previewImage.src = imageInput.value;
+  });
+
+  const toggleButton = document.querySelector(".form-opener");
+  const myForm = document.querySelector(".add-recipe");
+
+  toggleButton.addEventListener("click", formVisibility);
+
+  // Function to toggle the visibility of the form
+  function formVisibility() {
+    if (myForm.style.display === "none") {
+      myForm.style.display = "block";
+    } else {
+      myForm.style.display = "none";
+    }
   }
-  initialize();
+});
+
   // Event handler for the event listener
   function handleSubmit(event) {
     event.preventDefault();
@@ -17,10 +35,18 @@ document.addEventListener("DOMContentLoaded", () => {
       ingredients: event.target.ingredients.value,
       instructions: event.target.instructions.value,
       time_taken: event.target.time_taken.value,
+      image: event.target.image.value,
+      likes: 0,
     };
     renderRecipes(recipeObject);
     addRecipe(recipeObject);
     formVisibility();
+    clearForm()
+  }
+
+  function clearForm() {
+    const form = document.querySelector(".add-recipe");
+    form.reset();
   }
 
   // Fetch request for recipes as well as Patch, Post, and Delete
@@ -86,6 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     card.appendChild(image);
 
     const ViewRecipebtn = document.createElement("button");
+    ViewRecipebtn.className = "view-recipe";
     ViewRecipebtn.innerHTML = "View Recipe";
     ViewRecipebtn.addEventListener("click", () => {
       showRecipeDetails(recipe, card);
@@ -122,9 +149,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>Instructions:</h3>
         <p id="recipe-instructions">${recipe.instructions} minutes</p>
         <p id="recipe-time"><strong>Time Needed:</strong> ${recipe.time_taken}</p>
+        <div class = "button">
         <span class = "likes">${recipe.likes}</span>
         <button class = "like-button">Like Recipe</button>
-        <button class = "Delete" onClick = "(deleteRecipe(${recipe.id}))"> Delete /button>
+        <button class = "Delete" onClick = "(deleteRecipe(${recipe.id}))"> Delete </button>
+        </div>
       `;
 
     let button = recipeCard.querySelector(".like-button");
@@ -160,17 +189,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".add-recipe").classList.add("blur-effect");
   }
 
-  const toggleButton = document.querySelector(".form-opener");
-  const myForm = document.querySelector(".add-recipe");
-
-  toggleButton.addEventListener("click", formVisibility);
-
-  // Function to toggle the visibility of the form
-  function formVisibility() {
-    if (myForm.style.display === "none") {
-      myForm.style.display = "block";
-    } else {
-      myForm.style.display = "none";
-    }
+  function initialize() {
+    getRecipes();
   }
-});
+  initialize();
+
+
+  
