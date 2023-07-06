@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector(".add-recipe")
     .addEventListener("submit", handleSubmit);
-    
-    function initialize() {
-        getRecipes();
-      }
-      initialize();
+
+  function initialize() {
+    getRecipes();
+  }
+  initialize();
   // Event handler for the event listener
   function handleSubmit(event) {
     event.preventDefault();
@@ -46,6 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((recipe) => console.log(recipe));
   }
 
+  function updateLikes(recipeObject) {
+    fetch(`https://json-jzhe.onrender.com/Recipes/${recipeObject.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(recipeObject),
+    })
+      .then((response) => response.json())
+      .then((recipe) => console.log(recipe));
+  }
+
   // DOM manipulation functions
   //renders the recipes it has fetched.
   function renderRecipes(recipe) {
@@ -58,13 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
     name.innerHTML = recipe.name;
     card.appendChild(name);
 
-    const image = document.createElement('img');
+    const image = document.createElement("img");
     image.className = "image";
     image.src = recipe.image;
     image.alt = recipe.name;
-    image.style.width = "150px"; 
+    image.style.width = "150px";
     image.style.height = "150px";
-    card.appendChild(image)
+    card.appendChild(image);
 
     const ViewRecipebtn = document.createElement("button");
     ViewRecipebtn.innerHTML = "View Recipe";
@@ -72,14 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
       showRecipeDetails(recipe, card);
     });
 
-    const likeButton = document.createElement('button');
-    likeButton.className = 'like-button';
-    likeButton.innerHTML = 'Likes'
-    likeButton.addEventListener('click', handleLike)
-
     card.appendChild(ViewRecipebtn);
     recipeDeets.appendChild(card);
-    card.appendChild(likeButton)
   }
 
   //this functions shows the card with the rendered details
@@ -102,16 +106,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const recipeCard = document.createElement("div");
     recipeCard.className = "recipe-card";
     recipeCard.innerHTML = `
-    <img src="${recipe.image}" alt="${
-      recipe.name
-    }" class="image-poster" >
+    <img src="${recipe.image}" alt="${recipe.name}" class="image-poster" >
         <h2 id="recipe-name">${recipe.name}</h2>
         <h3> Ingredients:</h3>
         <p id="recipe-ingredients">${recipe.ingredients}</p>
         <h3>Instructions:</h3>
         <p id="recipe-instructions">${recipe.instructions} minutes</p>
         <p id="recipe-time"><strong>Time Needed:</strong> ${recipe.time_taken}</p>
+        <span class = "likes">${recipe.likes}</span>
+        <button class = "like-button">Like Recipe</button>
+
       `;
+
+    let button = recipeCard.querySelector(".like-button");
+    const likesCount = recipeCard.querySelector(".likes");
+    button.addEventListener("click", () => {
+      recipe.likes += 1;
+      likesCount.innerHTML = recipe.likes;
+      updateLikes(recipe);
+    });
 
     modalContent.appendChild(recipeCard);
     modal.appendChild(modalContent);
@@ -153,7 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function handleLike(){
-  console.log('Liked!');
+function handleLike() {
+  console.log("Liked!");
 }
-
