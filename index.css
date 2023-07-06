@@ -44,6 +44,10 @@ body {
   margin-right: 80px;
 }
 
+.navigation li:hover {
+  text-decoration: underline;
+}
+
 .navigation li:last-child {
   margin-right: 0;
 }
@@ -149,6 +153,7 @@ footer h2 {
 .card {
   position: relative;
   width: 300px;
+  height: 250px;
   margin: 100px 10px 10px 70px;
   padding: 40px;
   border-radius: 5px;
@@ -191,10 +196,14 @@ footer h2 {
 }
 .close {
   position: absolute;
-  top: 5px;
+  top: 2px;
   right: 5px;
-  font-size: 20px;
+  font-size: 35px;
   cursor: pointer;
+}
+
+.close:hover {
+  color: red;
 }
 
 .card {
@@ -231,5 +240,45 @@ footer h2 {
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
+
+/* @media screen and (max-width: 768px) {
+  .navigation .navbar {
+    width: 90%;
+  }
+  .add-recipe {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .add-recipe input[type="text"],
+  .add-recipe textarea {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .add-recipe input[type="submit"] {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .recipe-card{
+    width: 90%;
+    max-width: 90%;
+    max-height: 90%;
+  }
+} */

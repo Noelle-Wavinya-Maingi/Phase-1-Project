@@ -72,8 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
       showRecipeDetails(recipe, card);
     });
 
+    const likeButton = document.createElement('button');
+    likeButton.className = 'like-button';
+    likeButton.innerHTML = 'Likes'
+    likeButton.addEventListener('click', handleLike)
+
     card.appendChild(ViewRecipebtn);
     recipeDeets.appendChild(card);
+    card.appendChild(likeButton)
   }
 
   //this functions shows the card with the rendered details
@@ -146,4 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+function handleLike(){
+  console.log('Liked!');
+}
 
