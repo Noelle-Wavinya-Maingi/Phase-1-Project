@@ -89,6 +89,10 @@ git clone git@github.com:Noelle-Wavinya-Maingi/Phase-1-Project.git
 ```sh
 https://noelle-wavinya-maingi.github.io/Phase-1-Project/
 ```
+3. The api that was used for this project, its link is below:
+```sh
+https://json-jzhe.onrender.com/
+```
 # Author
 
 The author of the code challenge solution is Noelle Maingi.
