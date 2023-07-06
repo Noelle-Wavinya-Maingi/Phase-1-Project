@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p id="recipe-time"><strong>Time Needed:</strong> ${recipe.time_taken}</p>
         <span class = "likes">${recipe.likes}</span>
         <button class = "like-button">Like Recipe</button>
-        <button class = "Delete" onClick = "(deleteRecipe(${recipe.id}))"> Delete </button>
+        <button class = "Delete" onClick = "(deleteRecipe(${recipe.id}))"> Delete /button>
       `;
 
     let button = recipeCard.querySelector(".like-button");
