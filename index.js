@@ -56,6 +56,15 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((recipe) => console.log(recipe));
   }
 
+  function deleteRecipe(id) {
+    fetch(`https://json-jzhe.onrender.com/Recipes/${id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((Response) => Response.json())
+      .then((recipe) => console.log(recipe));
+  }
+
   // DOM manipulation functions
   //renders the recipes it has fetched.
   function renderRecipes(recipe) {
@@ -115,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p id="recipe-time"><strong>Time Needed:</strong> ${recipe.time_taken}</p>
         <span class = "likes">${recipe.likes}</span>
         <button class = "like-button">Like Recipe</button>
-
+        <button class = "Delete" onClick = "(deleteRecipe(${recipe.id}))"><i class="fal fa-trash"></i></button>
       `;
 
     let button = recipeCard.querySelector(".like-button");
