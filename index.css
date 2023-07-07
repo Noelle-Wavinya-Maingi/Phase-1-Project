@@ -106,6 +106,7 @@ footer h2 {
   width: 50%;
   margin-left: 450px;
   padding-top: 40px;
+  margin-top: 40px;
 }
 
 .add-recipe input[type="text"],
